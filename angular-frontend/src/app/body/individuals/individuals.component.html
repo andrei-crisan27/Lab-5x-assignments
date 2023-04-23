@@ -1,1 +1,23 @@
-<p>individuals works!</p>
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Nationality</td>
+            <td>Age</td>
+            <td>Job</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let individual of individuals; let i = index">
+            <td id="nav" (click)="goToIndividual(individual.id)">{{i+1}}</td>
+            <td>{{individual.firstname}}</td>
+            <td>{{individual.lastname}}</td>
+            <td>{{individual.nationality}}</td>
+            <td>{{individual.age}}</td>
+            <td>{{individual.job}}</td>
+        </tr>
+    </tbody>
+</table>
+<app-add-individual></app-add-individual>

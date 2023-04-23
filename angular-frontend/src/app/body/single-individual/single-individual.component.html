@@ -1,0 +1,9 @@
+<ng-container *ngIf="individual">
+    <div>{{individual.id}}</div>
+    <div>{{individual.firstname}}</div>
+    <div>{{individual.lastname}}</div>
+    <div>{{individual.nationality}}</div>
+    <div>{{individual.age}}</div>
+    <div>{{individual.job}}</div>
+    <button (click)="deleteIndividual(individual.id)">Delete</button>
+</ng-container>

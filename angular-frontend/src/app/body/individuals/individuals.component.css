@@ -1,0 +1,10 @@
+table {
+    border: solid;
+    border-width: 1px;
+    font-size: 20px;
+}
+
+#nav:hover{
+    cursor:pointer;
+    text-underline-position: under;
+}

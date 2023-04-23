@@ -1,0 +1,13 @@
+<form class="add">
+    <label for="firstname">First Name:</label>
+    <input type="text" name="firstname" id="firstname" [(ngModel)]="firstname"><br>
+    <label for="lastname">Last Name:</label>
+    <input type="text" name="lastname" id="lastname" [(ngModel)]="lastname"><br>
+    <label for="nationality">Nationality:</label>
+    <input type="text" name="nationality" id="nationality" [(ngModel)]="nationality"><br>
+    <label for="age">Age:</label>
+    <input type="text" name="age" id="age" [(ngModel)]="age"><br>
+    <label for="job">Job:</label>
+    <input type="text" name="job" id="job" [(ngModel)]="job"><br>
+    <button type="submit" (click)="addIndividual()">Add</button>
+</form>
