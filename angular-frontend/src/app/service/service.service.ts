@@ -25,4 +25,12 @@ export class ApiService {
   deleteIndividual(individualId: string): Observable<any>{
     return this.http.delete(`${this.baseUrl}individuals/${individualId}/`) as Observable<any>
   }
+
+  updateIndividual(individualId: number, individual: Individual): Observable<Individual> {
+    const url = `${this.baseUrl}individuals/${individualId}/`;
+    // Use PUT or PATCH based on your backend API requirements
+    // You can modify the request body (individual) based on the properties you want to update
+    return this.http.put<Individual>(url, individual);
+  }
+  
 }

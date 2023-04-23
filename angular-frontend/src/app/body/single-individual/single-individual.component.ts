@@ -11,13 +11,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SingleIndividualComponent {
   individual?: Individual;
   individualId?: number;
+  firstname: string = '';
+  lastname: string = '';
+  nationality: string = '';
+  age: string = '';
+  job: string = '';
   constructor(private serv: ApiService, private activatedRoute: ActivatedRoute, private router: Router) {}
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       this.individualId = params['id']
-      console.log(this.individualId)
       this.serv.getIndividual(this.individualId!).subscribe((indiv: Individual) =>{
         this.individual = indiv;
+        this.firstname = indiv.firstname;
+        this.lastname = indiv.lastname;
+        this.nationality = indiv.nationality;
+        this.age = indiv.age;
+        this.job = indiv.job;
       })
     })
   }
@@ -27,4 +36,20 @@ export class SingleIndividualComponent {
       this.router.navigate(['individuals'])
     })
   }
+
+  updateIndividual() {
+    const indiv: Individual = {
+      id: '',
+      firstname: this.firstname,
+      lastname: this.lastname,
+      nationality: this.nationality,
+      age: this.age,
+      job: this.job
+    }
+      this.serv.updateIndividual(this.individualId!, indiv).subscribe(() => {
+        window.location.reload();
+      });
+  }
+  
+
 }

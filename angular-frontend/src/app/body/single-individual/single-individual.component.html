@@ -1,9 +1,17 @@
-<ng-container *ngIf="individual">
-    <div>{{individual.id}}</div>
-    <div>{{individual.firstname}}</div>
-    <div>{{individual.lastname}}</div>
-    <div>{{individual.nationality}}</div>
-    <div>{{individual.age}}</div>
-    <div>{{individual.job}}</div>
+<ng-container *ngIf="individual" >
+    <div class="input-data">{{individual.id}}</div>
+    <div class="input-data">{{individual.firstname}}</div> <!-- Use safe navigation operator here -->
+    <div class="input-data">{{individual.lastname}}</div>
+    <div class="input-data">{{individual.nationality}}</div>
+    <div class="input-data">{{individual.age}}</div>
+    <div class="input-data">{{individual.job}}</div>
     <button (click)="deleteIndividual(individual.id)">Delete</button>
 </ng-container>
+<form (submit)="updateIndividual()">
+    <input class="update-data" [(ngModel)]="firstname" name="firstname" placeholder="First Name">
+    <input class="update-data" [(ngModel)]="lastname" name="lastname" placeholder="Last Name">
+    <input class="update-data" [(ngModel)]="nationality" name="nationality" placeholder="Nationality">
+    <input class="update-data" [(ngModel)]="age" name="age" placeholder="Age">
+    <input class="update-data" [(ngModel)]="job" name="job" placeholder="Job">
+    <button type="submit">Update</button>
+</form>
