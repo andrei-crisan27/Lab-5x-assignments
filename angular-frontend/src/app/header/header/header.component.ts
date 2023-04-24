@@ -17,4 +17,8 @@ export class HeaderComponent {
   goToIndividuals(){
     this.router.navigate(['individuals']);
   }
+
+  goToStatistics(){
+    this.router.navigate(['sort-by-total-age'])
+  }
 }

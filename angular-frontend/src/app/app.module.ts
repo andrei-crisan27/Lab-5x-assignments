@@ -8,6 +8,7 @@ import { IndividualsComponent } from './body/individuals/individuals.component';
 import { SingleIndividualComponent } from './body/single-individual/single-individual.component';
 import { AddIndividualComponent } from './body/add-individual/add-individual.component';
 import { FormsModule } from '@angular/forms';
+import { PopulationStatisticComponent } from './body/population-statistic/population-statistic.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     IndividualsComponent,
     SingleIndividualComponent,
-    AddIndividualComponent
+    AddIndividualComponent,
+    PopulationStatisticComponent
   ],
   imports: [
     BrowserModule,
